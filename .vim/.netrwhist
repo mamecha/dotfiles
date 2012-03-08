@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/var/www/paul/devel/yajima/paul1/manage/public/stylesheets/local'
+let g:netrw_dirhist_2='/var/www/paul/devel/yajima/paul1/manage/public/stylesheets'
+let g:netrw_dirhist_3='/var/www/paul/devel/yajima/paul1/manage/public/stylesheets/sites'
+let g:netrw_dirhist_4='/var/www/paul/devel/yajima/paul1/manage/public/stylesheets'
+let g:netrw_dirhist_5='/var/www/paul/devel/yajima/paul1/manage/public/stylesheets/sites'
+let g:netrw_dirhist_6='/var/www/paul/devel/yajima/paul1/manage/app/helpers'
+let g:netrw_dirhist_7='/home/yajima/.vim/bundle/fugitive.vim'
+let g:netrw_dirhist_8='/home/yajima/.vim/bundle/fugitive.vim/plugin'
