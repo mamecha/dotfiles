@@ -1,0 +1,16 @@
+vbell off
+vbell_msg ""
+escape ^@^@
+shelltitle "$ |bash"
+#hardstatus alwayslastline "[%02c] | %`%-w%{=b bw}%n %t%{-}%+w"
+hardstatus alwayslastline "%`%-w%{=b bw}%n %t%{-}%+w"
+
+termcapinfo xterm "hs:ts=\E]2;:fs=\007:ds=\E]2;${USER}@${HOST}\007"
+#termcapinfo xterm* ti@:te@
+defscrollback 3000
+defutf8 on
+cjkwidth on
+shell /bin/bash
+defkanji utf-8
+defencoding utf8
+encoding utf-8 utf-8
