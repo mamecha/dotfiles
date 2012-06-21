@@ -1,6 +1,6 @@
 [user]
-  #name = mamecha
-  email = #yajima@ans-web.co.jp
+  name = mamecha
+  email = yajima@ans-web.co.jp
 [color]
   # colorの設定(以下のコマンドは自動で色つける)
     ui = auto
