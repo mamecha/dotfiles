@@ -20,6 +20,8 @@ Bundle 'JavaScript-syntax'
 Bundle 'jQuery'
 " nginx conf
 Bundle 'nginx.vim'
+" html5
+Bundle 'othree/html5.vim'
 
 " smooth_scroll.vim : スクロールを賢く
 "Bundle 'Smooth-Scroll'

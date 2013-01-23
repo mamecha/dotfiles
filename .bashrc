@@ -15,8 +15,8 @@ HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=3000
+HISTFILESIZE=3000
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -101,8 +101,14 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+#rails
+export RAILS_DEVEL_NAME="yajima"
+alias sw_yourz="rake site:activate NAME=paul1"
+alias sw_reijo="rake site:activate NAME=paul2"
+alias git_req_pull="git request-pull master pub"
+alias sw_otani="sudo -u otani bash"
 # rvm_path=/usr/local/rvm 
-#.$rvm_path/scripts/rvm && rvm 1.9.2
+# . $rvm_path/scripts/rvm && rvm 1.9.2
 alias rails_sh="bundle exec rails-sh"
 #GIT 
 EDITOR="vi"
@@ -111,3 +117,13 @@ source /opt/src/git/contrib/completion/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
 #export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
+
+# 自分の環境の全ブランチを確認:
+alias git_my_all_b='~/all_branch.sh'
+# ユニコーン
+alias unicorn='./init/unicorn'
+# guard
+alias guard='bundle exec guard --group test'
+
+alias parallel_seed='for i in "" 2 3 4; do RAILS_ENV=test TEST_ENV_NUMBER=$i bundle exec rake db:seed; bundle exec rake db:migrate:status; done'
+alias rails_console="bundle exec rails console"
