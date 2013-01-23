@@ -6,14 +6,14 @@ files="/home/yajima/dotfiles/.*"
 for file in ${files}
 
 do
-   if ${file} == "/home/yajima/." ; then
+  echo ${file}
+   if [ ${file} = "/home/yajima/dotfiles/." ] ; then
     echo "pass"
-   elif ${file} == "/home/yajima/.." ; then
+   elif [ ${file} = "/home/yajima/dotfiles/.." ] ; then
     echo "pass"
-   elif ${file} == "/home/yajima/.git" ; then
+   elif [ ${file} = "/home/yajima/dotfiles/.git" ]; then
     echo "pass"
    else
-    echo ${file}
     ln -s ${file} /home/yajima/
     echo "ln -s ${file} /home/yajima/"
    fi
