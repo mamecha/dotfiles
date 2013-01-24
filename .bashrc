@@ -111,9 +111,8 @@ alias sw_otani="sudo -u otani bash"
 # . $rvm_path/scripts/rvm && rvm 1.9.2
 alias rails_sh="bundle exec rails-sh"
 #GIT 
-EDITOR="vi"
+export EDITOR="vim"
 # git settings
-source /opt/src/git/contrib/completion/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
 #export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 

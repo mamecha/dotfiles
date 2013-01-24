@@ -23,3 +23,9 @@ do
    fi
 
 done
+# bin
+    echo "ln -s ${home_dir}dotfiles/bin/ ${home_dir}"
+    ln -s ${home_dir}dotfiles/bin/ ${home_dir}
+# git-completion.bash
+    echo "ln -s ${home_dir}dotfiles/git-completion.bash ${home_dir}"
+    ln -s ${home_dir}dotfiles/git-completion.bash ${home_dir}
