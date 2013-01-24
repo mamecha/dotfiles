@@ -2,7 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-source /opt/src/git/contrib/completion/git-completion.bash
+source ~/dotfiles/git-completion.bash
 GIT_PS1_SHOWDIRTYSTATE=true
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return

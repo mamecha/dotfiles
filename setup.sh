@@ -1,21 +1,25 @@
 #!/bin/sh
 
+#mac
+home_dir="/Users/yajima/"
+#linux
+home_dir="/home/yajima/"
 
-files="/home/yajima/dotfiles/.*"
+files="${home_dir}dotfiles/.*"
 
 for file in ${files}
 
 do
   echo ${file}
-   if [ ${file} = "/home/yajima/dotfiles/." ] ; then
+   if [ ${file} = "${home_dir}dotfiles/." ] ; then
     echo "pass"
-   elif [ ${file} = "/home/yajima/dotfiles/.." ] ; then
+   elif [ ${file} = "${home_dir}dotfiles/.." ] ; then
     echo "pass"
-   elif [ ${file} = "/home/yajima/dotfiles/.git" ]; then
+   elif [ ${file} = "${home_dir}dotfiles/.git" ]; then
     echo "pass"
    else
-    ln -s ${file} /home/yajima/
-    echo "ln -s ${file} /home/yajima/"
+    ln -s ${file} ${home_dir}
+    echo "ln -s ${file} ${home_dir}"
    fi
 
 done
