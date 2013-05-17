@@ -6,6 +6,7 @@ filetype off                   " (1)
 set rtp+=~/.vim/vundle.git/    " (2)
 call vundle#rc()               " (3)
 
+Bundle 'yonchu/accelerated-smooth-scroll'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
 " status line
