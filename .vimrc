@@ -6,6 +6,9 @@ filetype off                   " (1)
 set rtp+=~/.vim/vundle.git/    " (2)
 call vundle#rc()               " (3)
 
+" Coffee Script
+Bundle 'kchmck/vim-coffee-script'
+
 Bundle 'yonchu/accelerated-smooth-scroll'
 " original repos on github
 Bundle 'tpope/vim-fugitive'
@@ -23,7 +26,9 @@ Bundle 'jQuery'
 Bundle 'nginx.vim'
 " html5
 Bundle 'othree/html5.vim'
-
+"
+Bundle 'ruby-matchit'
+Bundle 'ruby-endwise'
 " smooth_scroll.vim : スクロールを賢く
 "Bundle 'Smooth-Scroll'
 " vimshell : vimのshell
@@ -44,8 +49,6 @@ Bundle 'othree/html5.vim'
   Bundle 'mrkn256.vim'
   Bundle 'tomasr/molokai'
   Bundle 'yuroyoro/yuroyoro256.vim'
-  Bundle 'cchance-of-storm.vim'
-  Bundle 'mgutz/vim-color'
 "}}}
 filetype plugin indent on     " (5)
 
@@ -119,4 +122,31 @@ colorscheme molokai
 
 let g:Powerline_symbols = 'fancy'
 
+" 閉じた系
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
 
+inoremap ( ()<ESC>i
+inoremap <expr> ) ClosePair(')')
+inoremap { {}<ESC>i
+inoremap <expr> } ClosePair('}')
+inoremap [ []<ESC>i
+inoremap <expr> ] ClosePair(']')
+inoremap <% <% %><ESC>i
+inoremap <expr> %> ClosePair('%>')
+" pair close checker.
+" " from othree vimrc ( http://github.com/othree/rc/blob/master/osx/.vimrc )
+function ClosePair(char)
+  if getline('.')[col('.') - 1] == a:char
+    return "\<Right>"
+  else
+    return a:char
+  endif
+endf
+
+" XML/HTML 閉じタグ"
+augroup MyXML
+  autocmd!
+  autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
+  autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
+augroup END

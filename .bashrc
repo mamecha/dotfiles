@@ -126,3 +126,4 @@ alias guard='bundle exec guard --group test'
 
 alias parallel_seed='for i in "" 2 3 4; do RAILS_ENV=test TEST_ENV_NUMBER=$i bundle exec rake db:seed; bundle exec rake db:migrate:status; done'
 alias rails_console="bundle exec rails console"
+alias git_b_d="git b -d $1 | git push pub :$1"
