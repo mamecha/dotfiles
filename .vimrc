@@ -26,32 +26,13 @@ NeoBundle 'jQuery'
 " nginx conf
 NeoBundle 'nginx.vim'
 " html5
-Bundle 'othree/html5.vim'
+NeoBundle 'othree/html5.vim'
 
-Bundle 'dash.vim'
+""NeoBundle 'dash.vim'
 
-" smooth_scroll.vim : スクロールを賢く
-"Bundle 'Smooth-Scroll'
-" vimshell : vimのshell
-"Bundle 'Shougo/vimshell.git'
-" ステータスラインに顔文字を表示
-"Bundle 'mattn/hahhah-vim'
-" Unite {{{{
-" unite.vim : - すべてを破壊し、すべてを繋げ - vim
-"   scriptで実装されたanythingプラグイン
-  "Bundle 'Shougo/unite.vim'
-  "Bundle 'tsukkee/unite-help'
-  "Bundle 'h1mesuke/unite-outline'
-  "Bundle 'basyura/unite-rails'
-"}}}
 " ColorSchema{{{{
   " color schema 256
-  Bundle 'desert256.vim'
-  Bundle 'mrkn256.vim'
-  Bundle 'tomasr/molokai'
-  Bundle 'yuroyoro/yuroyoro256.vim'
-"  Bundle 'cchance-of-storm.vim'
-  Bundle 'mgutz/vim-color'
+  NeoBundle 'tomasr/molokai'
 "}}}
 filetype plugin indent on    
 "--------- NeoBundle ---------------------
