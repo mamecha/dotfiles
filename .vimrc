@@ -23,6 +23,8 @@ Bundle 'nginx.vim'
 " html5
 Bundle 'othree/html5.vim'
 
+Bundle 'dash.vim'
+
 " smooth_scroll.vim : スクロールを賢く
 "Bundle 'Smooth-Scroll'
 " vimshell : vimのshell
@@ -43,7 +45,7 @@ Bundle 'othree/html5.vim'
   Bundle 'mrkn256.vim'
   Bundle 'tomasr/molokai'
   Bundle 'yuroyoro/yuroyoro256.vim'
-  Bundle 'cchance-of-storm.vim'
+"  Bundle 'cchance-of-storm.vim'
   Bundle 'mgutz/vim-color'
 "}}}
 filetype plugin indent on     " (5)

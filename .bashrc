@@ -81,7 +81,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
-
+eval "$(rbenv init -)"
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -101,24 +101,24 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+if [ `uname` = "Darwin" ]; then
+  #mac用のコード
+  export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+  alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+  alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+elif [ `uname` = "Linux" ]; then
+  #Linux用のコード
+fi
+
+
+
 #rails
 export RAILS_DEVEL_NAME="yajima"
 alias sw_yourz="rake site:activate NAME=paul1"
 alias sw_reijo="rake site:activate NAME=paul2"
 alias git_req_pull="git request-pull master pub"
 alias sw_otani="sudo -u otani bash"
-# rvm_path=/usr/local/rvm 
-# . $rvm_path/scripts/rvm && rvm 1.9.2
-alias rails_sh="bundle exec rails-sh"
-#GIT 
-export EDITOR="vim"
-# git settings
-GIT_PS1_SHOWDIRTYSTATE=true
-#export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
-
-
-# 自分の環境の全ブランチを確認:
-alias git_my_all_b='~/all_branch.sh'
 # ユニコーン
 alias unicorn='./init/unicorn'
 # guard
@@ -126,3 +126,17 @@ alias guard='bundle exec guard --group test'
 
 alias parallel_seed='for i in "" 2 3 4; do RAILS_ENV=test TEST_ENV_NUMBER=$i bundle exec rake db:seed; bundle exec rake db:migrate:status; done'
 alias rails_console="bundle exec rails console"
+# rvm_path=/usr/local/rvm 
+# . $rvm_path/scripts/rvm && rvm 1.9.2
+alias rails_sh="bundle exec rails-sh"
+# 自分の環境の全ブランチを確認:
+alias git_my_all_b='~/all_branch.sh'
+
+
+export EDITOR="vim"
+#GIT 
+# git settings
+GIT_PS1_SHOWDIRTYSTATE=true
+#export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
+
+
