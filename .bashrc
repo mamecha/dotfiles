@@ -109,6 +109,7 @@ if [ `uname` = "Darwin" ]; then
   alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
 elif [ `uname` = "Linux" ]; then
   #Linux用のコード
+  alias l='ls -CF'
 fi
 
 
