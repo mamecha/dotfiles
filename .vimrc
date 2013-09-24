@@ -1,25 +1,30 @@
 syntax on
+"--------- NeoBundle ---------------------
+set nocompatible
+filetype plugin indent off
 
-"Vundle plagin かんり"
-filetype off                   " (1)
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+  call neobundle#rc(expand('~/.vim/bundle/'))
+endif
 
-set rtp+=~/.vim/vundle.git/    " (2)
-call vundle#rc()               " (3)
-
+""NeoBundle 'shougo/neocomplete'
+" Coffee Script
+NeoBundle 'kchmck/vim-coffee-script'
 " original repos on github
-Bundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-fugitive'
 " status line
-Bundle 'Lokaltog/vim-powerline'
-" vim-scripts repos
-Bundle 'rails.vim'
+NeoBundle 'Lokaltog/vim-powerline'
 " vim-ruby : VimでRubyを扱う際の最も基本的な拡張機能
-Bundle 'ruby.vim'
+NeoBundle 'ruby.vim'
+" vim-scripts repos
+" "NeoBundle 'rails.vim'
 " JavaScript
-Bundle 'JavaScript-syntax'
+NeoBundle 'JavaScript-syntax'
 " jQuery
-Bundle 'jQuery'
+NeoBundle 'jQuery'
 " nginx conf
-Bundle 'nginx.vim'
+NeoBundle 'nginx.vim'
 " html5
 Bundle 'othree/html5.vim'
 
@@ -48,7 +53,8 @@ Bundle 'dash.vim'
 "  Bundle 'cchance-of-storm.vim'
   Bundle 'mgutz/vim-color'
 "}}}
-filetype plugin indent on     " (5)
+filetype plugin indent on    
+"--------- NeoBundle ---------------------
 
 set nobk
 set showmatch
@@ -120,4 +126,34 @@ colorscheme molokai
 
 let g:Powerline_symbols = 'fancy'
 
+" 閉じた系
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+
+inoremap ( ()<ESC>i
+inoremap <expr> ) ClosePair(')')
+inoremap { {}<ESC>i
+inoremap <expr> } ClosePair('}')
+inoremap [ []<ESC>i
+inoremap <expr> ] ClosePair(']')
+inoremap <% <% %><ESC>i
+inoremap <expr> %> ClosePair('%>')
+" pair close checker.
+" " from othree vimrc ( http://github.com/othree/rc/blob/master/osx/.vimrc )
+function ClosePair(char)
+  if getline('.')[col('.') - 1] == a:char
+    return "\<Right>"
+  else
+    return a:char
+  endif
+endf
+
+" XML/HTML 閉じタグ"
+augroup MyXML
+  autocmd!
+  autocmd Filetype xml inoremap <buffer> </ </<C-x><C-o>
+  autocmd Filetype html inoremap <buffer> </ </<C-x><C-o>
+  autocmd FileType eruby inoremap <silent> <buffer> </ </<C-x><C-o>
+augroup END
+autocmd! FileType eruby,html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 

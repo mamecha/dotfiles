@@ -140,3 +140,13 @@ GIT_PS1_SHOWDIRTYSTATE=true
 #export PS1='\[\033[32m\]\u@\h\[\033[00m\]:\[\033[34m\]\w\[\033[31m\]$(__git_ps1)\[\033[00m\]\$ '
 
 
+# 自分の環境の全ブランチを確認:
+alias git_my_all_b='~/all_branch.sh'
+# ユニコーン
+alias unicorn='./init/unicorn'
+# guard
+alias guard='bundle exec guard --group test'
+
+alias parallel_seed='for i in "" 2 3 4; do RAILS_ENV=test TEST_ENV_NUMBER=$i bundle exec rake db:seed; bundle exec rake db:migrate:status; done'
+alias rails_console="bundle exec rails console"
+alias git_b_d="git b -d $1 | git push pub :$1"
