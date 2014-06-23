@@ -123,7 +123,9 @@ alias sw_otani="sudo -u otani bash"
 # ユニコーン
 alias unicorn='./init/unicorn'
 # guard
-alias guard='bundle exec guard --group test'
+alias guard='guard --group test'
+alias spec_guard='guard -g spec : rspec'
+alias cucumer_guard='guard -g cuke : cucumer'
 
 alias parallel_seed='for i in "" 2 3 4; do RAILS_ENV=test TEST_ENV_NUMBER=$i bundle exec rake db:seed; bundle exec rake db:migrate:status; done'
 alias rails_console="bundle exec rails console"
@@ -147,7 +149,10 @@ alias git_my_all_b='~/all_branch.sh'
 alias unicorn='./init/unicorn'
 # guard
 alias guard='bundle exec guard --group test'
-
 alias parallel_seed='for i in "" 2 3 4; do RAILS_ENV=test TEST_ENV_NUMBER=$i bundle exec rake db:seed; bundle exec rake db:migrate:status; done'
 alias rails_console="bundle exec rails console"
 alias git_b_d="git b -d $1 | git push pub :$1"
+# shell の深さ
+alias nested='echo $SHLVL'
+eval "$(direnv hook bash)"
+PROMPT_COMMAND='echo -ne "\033]0;${HOSTNAME%%.*}:${PWD/$HOME/~}\007"'

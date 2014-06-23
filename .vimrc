@@ -138,3 +138,7 @@ augroup MyXML
 augroup END
 autocmd! FileType eruby,html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 
+" 全角
+if has('multi_byte_ime') || has('xim')
+  highlight CursorIM guibg=DarkCyan guifg=NONE
+endif
