@@ -137,6 +137,7 @@ augroup MyXML
   autocmd FileType eruby inoremap <silent> <buffer> </ </<C-x><C-o>
 augroup END
 autocmd! FileType eruby,html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+set noundofile
 
 " 全角
 if has('multi_byte_ime') || has('xim')
